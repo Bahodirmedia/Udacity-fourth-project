@@ -7,13 +7,23 @@ function handleSubmit(event) {
     Client.checkURL(formText)
 
     console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-    .then(res => {
-        return res.json()
-    })
-    .then(function(data) {
-        document.getElementById('results').innerHTML = data.message
-    })
+    fetch('http://localhost:8081/article', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                formText
+            })
+        })
+        .then(res => {
+            return res.json()
+        })
+        .then(function (data) {
+            document.getElementById('results').innerHTML = data.subjectivity
+        })
 }
 
-export { handleSubmit }
+export {
+    handleSubmit
+}
