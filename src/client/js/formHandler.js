@@ -16,9 +16,7 @@ function handleSubmit(event) {
                 formText
             })
         })
-        .then(res => {
-            return res.json()
-        })
+        .then(res=> res.json())
         .then(function (data) {
             document.getElementById('results').innerHTML = data.subjectivity
         })
