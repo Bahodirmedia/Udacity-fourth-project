@@ -18,8 +18,8 @@ function handleSubmit(event) {
         })
         .then(res=> res.json())
         .then(function (data) {
-            console.log(data);
             document.getElementById('results').innerHTML = data.subjectivity
+            console.log(data);
         })
 }
 
