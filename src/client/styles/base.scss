@@ -1,14 +1,100 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background-image: linear-gradient(to top, rgba(245, 246, 252, 0.52), rgba(24, 22, 23, 0.73));
+  background-size: cover;
+  color: white;
+  padding: 50px 16px;
+  height: 100vh;
+
+  &__body {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 8%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  &__left,
+  &__right {
+    width: 45%;
+  }
+
+  &__zip,
+  &__feel {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+  }
 }
 
-main {
-    flex: 2;
+label,
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
+label {
+  margin-left: 20px;
+}
+
+#name,
+#feelings {
+  border-radius: 25px;
+  height: 40px;
+  padding-left: 20px;
+  outline: none;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+}
+
+#name:active,
+#feelings:active,
+#name:focus,
+#feelings:focus {
+  border-color: blue;
+}
+
+#feelings {
+  height: auto;
+  resize: none;
+  padding-top: 20px;
+}
+
+#submit {
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  width: 25%;
+  align-self: center;
+  height: 40px;
+  transition: 0.5s;
+}
+
+#submit:hover {
+  background-color: blue;
+  color: wheat;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  & > span {
+    color: blue;
+  }
+}
+
+.error {
+  border-color: red !important;
 }

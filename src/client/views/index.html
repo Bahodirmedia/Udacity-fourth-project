@@ -1,46 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
+<html lang="en">
 
-    <body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Evaluating a News Article with NLP</title>
+</head>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+<body>
+	<div class="app">
+		<h1 class="app__title">Evaluating a News Article with Natural Language Processing</h1>
+		<div class="app__body">
+			<div class="app__left">
+				<div class="app__zip">
+					<form class="" onsubmit="return Client.handleSubmit(event)">
+						<label id="label" for="name">Please insert URL of article</label>
+						<input id="name" type="text" name="input" value="" placeholder="Insert URL of article"
+							onfocus="this.value=''">
+						<input id="submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+							onsubmit="return Client.handleSubmit(event)">
+					</form>
+				</div>
+				<!-- <div class="app__feel">
+          <label for="feelings">Article text:</label>
+          <textarea id="feelings" placeholder="The text of article will appear here" rows="9" cols="50"></textarea>
+        </div> -->
+			</div>
+			<div class="app__right">
+				<h2 class="title">Results:</h2>
+				<div id="entryHolder">
+					<p class="name">Score tag: <span id="score_tag"></span></p>
+					<p class="name">Agreement: <span id="agreement"></span></p>
+					<p class="name">Subjectivity: <span id="subjectivity"></span></p>
+					<p class="name">Confidence: <span id="confidence"></span></p>
+					<p class="name">Irony: <span id="irony"></span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+</body>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            </section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
-        
-        <script>
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
-                });
-            }
-           </script>
-    </body>
 </html>
