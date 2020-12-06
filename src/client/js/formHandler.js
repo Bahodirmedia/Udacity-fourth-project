@@ -1,4 +1,4 @@
-function handleSubmit(event) {
+let handleSubmit = (event) => {
 	event.preventDefault()
 
 	// check what text was put into the form field
@@ -19,7 +19,6 @@ function handleSubmit(event) {
 			})
 			.then(res => res.json())
 			.then(function (data) {
-				// document.getElementById('feelings').innerHTML = data.text
 				document.getElementById('score_tag').innerHTML = data.score_tag
 				document.getElementById('agreement').innerHTML = data.agreement
 				document.getElementById('subjectivity').innerHTML = data.subjectivity
